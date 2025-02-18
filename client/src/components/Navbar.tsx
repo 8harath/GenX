@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -13,6 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -34,6 +36,7 @@ export default function Navbar() {
     e.preventDefault();
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
   };
 
   return (
@@ -50,6 +53,7 @@ export default function Navbar() {
             </a>
           </Link>
 
+          {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-8">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
@@ -73,7 +77,39 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-muted-foreground hover:text-primary transition-colors"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        <motion.div
+          initial={false}
+          animate={{ height: isMenuOpen ? "auto" : 0 }}
+          className="md:hidden overflow-hidden"
+        >
+          <ul className="py-4 space-y-4">
+            {navLinks.map(({ href, label }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={(e) => handleClick(e, href)}
+                  className={`
+                    block text-muted-foreground hover:text-primary transition-colors
+                    ${activeSection === href.slice(1) ? 'text-primary' : ''}
+                  `}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </motion.nav>
   );
