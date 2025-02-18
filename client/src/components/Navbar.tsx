@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#innovations", label: "Innovations" },
   { href: "#how-it-works", label: "How It Works" },
+  { href: "#blog", label: "Blog" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -21,7 +22,7 @@ export default function Navbar() {
           <Link href="/">
             <a className="text-xl font-bold text-primary">GenX Reality</a>
           </Link>
-          
+
           <ul className="hidden md:flex space-x-8">
             {navLinks.map(({ href, label }) => (
               <li key={href}>

@@ -13,8 +13,8 @@ export default function Hero() {
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-bold mb-4 font-montserrat bg-clip-text text-transparent bg-gradient-to-r from-primary/80 to-primary"
+          transition={{ duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }}
+          className="text-4xl md:text-6xl font-bold mb-4 font-montserrat text-white"
         >
           GenX Reality: Making AR/VR Accessible and Affordable for All
         </motion.h1>
@@ -22,7 +22,7 @@ export default function Hero() {
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.6, 0.05, 0.01, 0.9] }}
           className="text-xl md:text-2xl mb-8 text-muted-foreground"
         >
           Unlocking the Transformative Potential of AR/VR Through Innovation and Accessibility
@@ -31,11 +31,11 @@ export default function Hero() {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.6, 0.05, 0.01, 0.9] }}
         >
           <Button
             size="lg"
-            className="bg-background/10 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-lg"
+            className="bg-background/10 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-lg hover:scale-105"
           >
             Explore Our Solutions
           </Button>
