@@ -6,7 +6,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MessageCircle, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, Phone, Instagram } from "lucide-react";
+import { SiX } from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
 
 const formSchema = z.object({
@@ -33,6 +34,34 @@ const contactInfo = [
     title: "Social Media",
     content: "Follow us for updates",
     href: "#"
+  }
+];
+
+const socialLinks = [
+  {
+    icon: Github,
+    href: "https://github.com",
+    label: "GitHub"
+  },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com",
+    label: "LinkedIn"
+  },
+  {
+    icon: Instagram,
+    href: "https://instagram.com",
+    label: "Instagram"
+  },
+  {
+    icon: SiX,
+    href: "https://x.com",
+    label: "X (Twitter)"
+  },
+  {
+    icon: Mail,
+    href: "mailto:contact@genxreality.com",
+    label: "Email"
   }
 ];
 
@@ -108,26 +137,34 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="flex space-x-4 pt-6">
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-primary/10 rounded-lg text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                <Github className="w-6 h-6" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-primary/10 rounded-lg text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                <Linkedin className="w-6 h-6" />
-              </motion.a>
-            </div>
+            {/* Social Media Links */}
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="pt-6"
+            >
+              <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+              <div className="flex flex-wrap gap-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    whileHover={{ scale: 1.1 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-primary/10 rounded-lg text-muted-foreground hover:text-primary transition-colors duration-300 hover:shadow-[0_0_15px_rgba(0,255,0,0.2)] group"
+                    title={social.label}
+                  >
+                    <social.icon className={`w-6 h-6 ${social.label === 'X (Twitter)' ? 'fill-current' : ''}`} />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           {/* Contact Form */}
