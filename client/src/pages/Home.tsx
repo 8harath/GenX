@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Innovations from "@/components/sections/Innovations";
 import HowItWorks from "@/components/sections/HowItWorks";
+import FutureVision from "@/components/sections/FutureVision";
 import Blog from "@/components/sections/Blog";
 import Contact from "@/components/sections/Contact";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <Innovations />
       <HowItWorks />
+      <FutureVision />
       <Blog />
       <Contact />
     </motion.div>
