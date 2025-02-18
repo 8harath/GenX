@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ y: 20, opacity: 0 }}
@@ -51,7 +51,10 @@ export default function Contact() {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input {...field} className="focus:ring-primary" />
+                      <Input 
+                        {...field} 
+                        className="transition-all duration-300 focus:border-primary focus:ring-1 focus:ring-primary hover:border-primary/50 shadow-none hover:shadow-[0_0_10px_rgba(0,255,0,0.1)]" 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -65,7 +68,11 @@ export default function Contact() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input {...field} type="email" className="focus:ring-primary" />
+                      <Input 
+                        {...field} 
+                        type="email" 
+                        className="transition-all duration-300 focus:border-primary focus:ring-1 focus:ring-primary hover:border-primary/50 shadow-none hover:shadow-[0_0_10px_rgba(0,255,0,0.1)]" 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -79,7 +86,10 @@ export default function Contact() {
                   <FormItem>
                     <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <Textarea {...field} className="focus:ring-primary" />
+                      <Textarea 
+                        {...field} 
+                        className="transition-all duration-300 focus:border-primary focus:ring-1 focus:ring-primary hover:border-primary/50 shadow-none hover:shadow-[0_0_10px_rgba(0,255,0,0.1)]" 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -88,7 +98,7 @@ export default function Contact() {
 
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.3)] hover:scale-[1.02]"
               >
                 Send Message
               </Button>
@@ -96,22 +106,24 @@ export default function Contact() {
           </Form>
 
           <div className="mt-8 flex justify-center space-x-4">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.1 }}
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <Github className="w-6 h-6" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <Linkedin className="w-6 h-6" />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
