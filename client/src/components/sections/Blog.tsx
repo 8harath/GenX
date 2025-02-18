@@ -5,17 +5,17 @@ import { useState } from "react";
 const blogPosts = [
   {
     title: "Solving the Cost and Accessibility Barriers of VR: GenX Reality's Approach",
-    description: "Discover how we're making VR technology accessible to everyone through innovative solutions and cost-effective design.",
+    description: "Discover how we're making VR technology accessible to everyone through innovative solutions and cost-effective design. Our optimized components and streamlined manufacturing process are revolutionizing VR accessibility.",
     image: "/blog/accessibility.jpg"
   },
   {
     title: "VR for Education: Transforming Learning in Emerging Markets",
-    description: "Exploring the impact of affordable VR solutions in educational environments across developing regions.",
+    description: "Explore how VR is revolutionizing education, especially in underserved regions. Learn about our initiatives to democratize immersive learning experiences across diverse educational environments.",
     image: "/blog/education.jpg"
   },
   {
     title: "What Makes GenX Reality's Immersive Technology Unique?",
-    description: "An in-depth look at our innovative approach to VR hardware and software integration.",
+    description: "An in-depth look at our innovative approach to VR hardware and software integration. Discover how our optimized components and streamlined manufacturing create affordable yet powerful VR solutions.",
     image: "/blog/technology.jpg"
   }
 ];

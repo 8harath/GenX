@@ -23,9 +23,19 @@ export default function Hero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="text-xl md:text-2xl mb-8 text-muted-foreground"
+          className="text-xl md:text-2xl mb-6 text-muted-foreground"
         >
           Unlocking the Transformative Potential of AR/VR Through Innovation and Accessibility
+        </motion.p>
+
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.6, 0.05, 0.01, 0.9] }}
+          className="text-lg mb-8 max-w-3xl mx-auto text-muted-foreground/80"
+        >
+          GenX Reality is dedicated to breaking down the cost and accessibility barriers that prevent widespread VR adoption. 
+          Our low-cost, high-performance VR headsets are designed to revolutionize industries like education, healthcare, training, and more.
         </motion.p>
 
         <motion.div
