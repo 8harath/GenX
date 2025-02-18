@@ -6,6 +6,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import FutureVision from "@/components/sections/FutureVision";
 import Blog from "@/components/sections/Blog";
 import Contact from "@/components/sections/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <FutureVision />
       <Blog />
       <Contact />
+      <Footer />
     </motion.div>
   );
 }
